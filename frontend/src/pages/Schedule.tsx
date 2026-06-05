@@ -14,7 +14,6 @@ export function Schedule() {
       <PageHeader
         eyebrow={t("home.eyebrow")}
         title={t("schedule.title")}
-        subtitle={t("schedule.subtitle")}
       />
 
       <div className="max-w-xl mx-auto">

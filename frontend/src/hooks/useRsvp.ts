@@ -9,21 +9,16 @@ import type {
   MealChoice,
   RsvpForm,
   SecondDay,
-  SoupChoice,
-  TransportOffer,
 } from "../types/guest";
 
 export type SaveStatus = "idle" | "saving" | "success" | "error";
 
 export const emptyRsvpForm: RsvpForm = {
   attendance: "",
-  soup_choice: "",
   meal_choice: "",
   alcohol_choice: "",
   alcohol_other: "",
   second_day: "",
-  transport_offer: "",
-  transport_details: "",
   additional_notes: "",
 };
 
@@ -31,13 +26,10 @@ export function guestToForm(guest: Guest | null): RsvpForm {
   if (!guest) return { ...emptyRsvpForm };
   return {
     attendance: (guest.attendance as Attendance) ?? "",
-    soup_choice: (guest.soup_choice as SoupChoice) ?? "",
     meal_choice: (guest.meal_choice as MealChoice) ?? "",
     alcohol_choice: (guest.alcohol_choice as AlcoholChoice) ?? "",
     alcohol_other: guest.alcohol_other ?? "",
     second_day: (guest.second_day as SecondDay) ?? "",
-    transport_offer: (guest.transport_offer as TransportOffer) ?? "",
-    transport_details: guest.transport_details ?? "",
     additional_notes: guest.additional_notes ?? "",
   };
 }

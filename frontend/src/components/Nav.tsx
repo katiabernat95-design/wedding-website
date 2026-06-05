@@ -2,7 +2,6 @@ import { useState, useCallback, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { wedding } from "../config";
 
 interface NavLinkConfig {
@@ -144,11 +143,6 @@ export function Nav() {
                   </li>
                 ))}
               </ul>
-
-              {/* Language switcher */}
-              <div className="px-6 py-5 border-t border-[var(--color-line)]">
-                <LanguageSwitcher />
-              </div>
             </motion.nav>
           </>
         )}

@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-[15px] font-medium tracking-wide transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-[15px] cursor-pointer font-medium tracking-wide transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
 
 function variantClasses(variant: Variant, selected: boolean): string {
   if (variant === "primary") {

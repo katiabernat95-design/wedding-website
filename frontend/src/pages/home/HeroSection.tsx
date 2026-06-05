@@ -29,11 +29,11 @@ export function HeroSection() {
         {t("home.eyebrow")}
       </div>
       <h1 className="mt-6 font-serif text-6xl sm:text-7xl leading-[1.05]">
-        {wedding.bride}
+        {wedding.groom}
         <span className="font-script text-[var(--color-sage-600)] block text-7xl sm:text-8xl my-1">
           {t("home.coupleAnd")}
         </span>
-        {wedding.groom}
+        {wedding.bride}
       </h1>
       <div className="mt-6 text-sm sm:text-base tracking-[0.2em] uppercase text-[var(--color-ink-soft)]">
         {dateLabel(wedding.date, i18n.resolvedLanguage ?? "ru")}

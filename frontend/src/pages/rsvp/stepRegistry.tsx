@@ -56,20 +56,17 @@ export const stepRegistry: RsvpStep[] = [
     labelKey: "rsvp.steps.menu",
     isApplicable: yesOnly,
     isComplete: (f) =>
-      !!f.soup_choice &&
       !!f.meal_choice &&
       !!f.alcohol_choice &&
       (f.alcohol_choice !== "other" || f.alcohol_other.trim().length > 0),
     render: ({ form, setField }) => (
       <StepMenu
         value={{
-          soup: form.soup_choice,
           meal: form.meal_choice,
           alcohol: form.alcohol_choice,
           alcoholOther: form.alcohol_other,
         }}
         onChange={(p) => {
-          if (p.soup !== undefined) setField("soup_choice", p.soup);
           if (p.meal !== undefined) setField("meal_choice", p.meal);
           if (p.alcohol !== undefined) setField("alcohol_choice", p.alcohol);
           if (p.alcoholOther !== undefined)
@@ -79,7 +76,6 @@ export const stepRegistry: RsvpStep[] = [
     ),
     summaryRows: (f, t) => {
       const parts: string[] = [];
-      if (f.soup_choice) parts.push(t(`rsvp.soupOptions.${f.soup_choice}`));
       if (f.meal_choice) parts.push(t(`rsvp.mealOptions.${f.meal_choice}`));
       if (f.alcohol_choice) {
         const alcohol =
@@ -100,20 +96,14 @@ export const stepRegistry: RsvpStep[] = [
     id: "logistics",
     labelKey: "rsvp.steps.logistics",
     isApplicable: yesOnly,
-    isComplete: (f) => !!f.second_day && !!f.transport_offer,
+    isComplete: (f) => !!f.second_day,
     render: ({ form, setField }) => (
       <StepLogistics
         value={{
           secondDay: form.second_day,
-          transport: form.transport_offer,
-          transportDetails: form.transport_details,
         }}
         onChange={(p) => {
           if (p.secondDay !== undefined) setField("second_day", p.secondDay);
-          if (p.transport !== undefined)
-            setField("transport_offer", p.transport);
-          if (p.transportDetails !== undefined)
-            setField("transport_details", p.transportDetails);
         }}
       />
     ),
@@ -126,17 +116,8 @@ export const stepRegistry: RsvpStep[] = [
             : f.second_day === "maybe"
               ? t("rsvp.secondDayMaybe")
               : "-";
-      const transportValue =
-        f.transport_offer === "yes"
-          ? f.transport_details
-            ? `${t("rsvp.transportYes")} · ${f.transport_details}`
-            : t("rsvp.transportYes")
-          : f.transport_offer === "no"
-            ? t("rsvp.transportNo")
-            : "-";
       return [
         { label: t("rsvp.fields.secondDay"), value: secondDayValue },
-        { label: t("rsvp.fields.transport"), value: transportValue },
       ];
     },
   },

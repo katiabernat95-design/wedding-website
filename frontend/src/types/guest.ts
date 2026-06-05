@@ -1,5 +1,4 @@
 export type Attendance = "yes" | "no" | "";
-export type SoupChoice = "" | "borscht" | "cheese" | "salmon" | "vegetables";
 export type MealChoice = "" | "beef" | "pork" | "chicken" | "fish" | "veg";
 export type AlcoholChoice =
   | ""
@@ -9,19 +8,15 @@ export type AlcoholChoice =
   | "soft"
   | "other";
 export type SecondDay = "" | "yes" | "no" | "maybe";
-export type TransportOffer = "" | "yes" | "no";
 
 export interface Guest {
   token: string;
   name: string;
   attendance?: Attendance;
-  soup_choice?: SoupChoice;
   meal_choice?: MealChoice;
   alcohol_choice?: AlcoholChoice;
   alcohol_other?: string;
   second_day?: SecondDay;
-  transport_offer?: TransportOffer;
-  transport_details?: string;
   additional_notes?: string;
   rsvp_completed?: string;
   rsvp_last_step?: string;
@@ -31,13 +26,10 @@ export interface Guest {
 
 export interface RsvpForm {
   attendance: Attendance;
-  soup_choice: SoupChoice;
   meal_choice: MealChoice;
   alcohol_choice: AlcoholChoice;
   alcohol_other: string;
   second_day: SecondDay;
-  transport_offer: TransportOffer;
-  transport_details: string;
   additional_notes: string;
 }
 

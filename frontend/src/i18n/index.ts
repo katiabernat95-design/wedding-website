@@ -2,7 +2,6 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import { ru } from "./locales/ru";
-import { pl } from "./locales/pl";
 
 export const SUPPORTED_LANGUAGES = ["ru", "pl"] as const;
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
@@ -18,7 +17,6 @@ void i18n
   .init({
     resources: {
       ru: { translation: ru },
-      pl: { translation: pl },
     },
     fallbackLng: "ru",
     supportedLngs: SUPPORTED_LANGUAGES,

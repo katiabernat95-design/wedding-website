@@ -13,15 +13,25 @@
   --color-cream: #f3ecdf;
   --color-paper: #fffdf8;
 
-  --color-sage-50: #f0f4ed;
-  --color-sage-100: #dde7d6;
-  --color-sage-200: #b9cdaf;
-  --color-sage-300: #94b189;
-  --color-sage-400: #6f9466;
-  --color-sage-500: #557a4d;
-  --color-sage-600: #44613e;
-  --color-sage-700: #364d31;
-  --color-sage-800: #2a3c26;
+  /*--color-sage-50: #f0f4ed;*/
+  /*--color-sage-100: #dde7d6;*/
+  /*--color-sage-200: #b9cdaf;*/
+  /*--color-sage-300: #94b189;*/
+  /*--color-sage-400: #6f9466;*/
+  /*--color-sage-500: #557a4d;*/
+  /*--color-sage-600: #44613e;*/
+  /*--color-sage-700: #364d31;*/
+  /*--color-sage-800: #2a3c26;*/
+
+  --color-sage-50:  #f1f7f4;
+  --color-sage-100: #ddeee4;
+  --color-sage-200: #bcddca;
+  --color-sage-300: #96caae;
+  --color-sage-400: #70b692;
+  --color-sage-500: #4f9d77;
+  --color-sage-600: #3f7f60;
+  --color-sage-700: #32654d;
+  --color-sage-800: #274f3d;
 
   --color-ink: #2d2a26;
   --color-ink-soft: #4d4842;
